@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Para ti ❤️</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #6dd5ed, #2193b0);
+      font-family: 'Comic Sans MS', cursive;
+      overflow: hidden;
+    }
+    h1 {
+      font-size: 3rem;
+      color: white;
+      text-shadow: 2px 2px 15px rgba(0,0,0,0.5);
+      text-align: center;
+      margin: 20px;
+      animation: latido 1.5s infinite;
+    }
+    @keyframes latido {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+    }
+    .corazon {
+      position: absolute;
+      color: #00e5ff;
+      font-size: 24px;
+      animation: subir 6s linear infinite;
+    }
+    @keyframes subir {
+      0% { transform: translateY(100vh) scale(0.5); opacity: 1; }
+      100% { transform: translateY(-10vh) scale(1.5); opacity: 0; }
+    }
+    .imagenes {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 15px;
+    }
+    .imagenes img {
+      width: 150px;
+      height: auto;
+      border-radius: 20px;
+      border: 3px solid white;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+      transition: transform 0.3s;
+    }
+    .imagenes img:hover {
+      transform: scale(1.1);
+    }
+    .mensaje {
+      background: rgba(255, 255, 255, 0.15);
+      padding: 20px;
+      border-radius: 20px;
+      color: white;
+      text-align: center;
+      font-size: 1.1rem;
+      font-weight: bold;
+      max-width: 340px;
+      margin: 20px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+      line-height: 1.5;
+    }
+    button {
+      margin-top: 10px;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 15px;
+      background: #ffffff;
+      color: #0077ff;
+      font-weight: bold;
+      font-size: 1rem;
+      cursor: pointer;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+      transition: transform 0.2s, background 0.3s;
+    }
+    button:hover {
+      transform: scale(1.1);
+      background: #e0f7ff;
+    }
+  </style>
+</head>
+<body>
+  <h1>💖 Nathy, mi amor eterno 💖</h1>
+  <div class="imagenes">
+    <img src="4b69e01a6671f4b0bea2a0ce590d3a2e.jpg" alt="Parejita">
+    <img src="WhatsApp Image 2025-10-01 at 10.16.30 AM.jpeg" alt="Nathy">
+  </div>
+  <div class="mensaje">
+    Amor, perdón por mis ausencias y por no demostrarte siempre lo que mereces. 💕<br><br>
+    Pronto estaremos juntos, y quiero recordarte que eres una mujer brillante, fuerte y demasiado especial. ✨<br><br>
+    Sé que lograrás todo lo que te propongas, porque tienes un corazón gigante y una mente increíble. Yo siempre voy a estar aquí, apoyándote y amándote más cada día. 💙
+  </div>
+  <button onclick="explosionCorazones()">💙 Un beso más 💙</button>
+
+  <script>
+    function crearCorazon() {
+      const corazon = document.createElement("div");
+      corazon.classList.add("corazon");
+      corazon.innerHTML = "💙";
+      corazon.style.left = Math.random() * 100 + "vw";
+      corazon.style.fontSize = (20 + Math.random() * 35) + "px";
+      document.body.appendChild(corazon);
+      setTimeout(() => { corazon.remove(); }, 6000);
+    }
+
+    setInterval(crearCorazon, 900);
+
+    function explosionCorazones() {
+      for (let i = 0; i < 25; i++) {
+        setTimeout(crearCorazon, i * 100);
+      }
+    }
+  </script>
+</body>
+</html>
